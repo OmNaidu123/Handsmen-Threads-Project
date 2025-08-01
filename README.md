@@ -32,6 +32,42 @@ HandsMen Threads' Salesforce-powered solution transforms data management and cus
 - Scheduled & Batch Apex
 - Email Alerts & Notifications
 
+## 📦 Objects Overview
+
+| Object Name        | Type    | Key Fields                             |
+|--------------------|---------|-----------------------------------------|
+| `Customer__c`      | Custom  | Name, Email, Loyalty Status             |
+| `Order__c`         | Custom  | Order Date, Customer, Total Amount      |
+| `Product__c`       | Custom  | Stock Level, Price, SKU                 |
+| `Warehouse__c`     | Custom  | Name, Location                          |
+| `OrderLineItem__c` | Junction| Order ↔ Product, Quantity               |
+
+---
+
+## ⚙️ Flows & Automation
+
+- ✅ **Order Confirmation Flow** *(Record-Triggered)*  
+  Sends confirmation email to customers immediately after order creation.
+
+- ⚠️ **Stock Alert Flow** *(Scheduled Flow)*  
+  Triggers automated alert when product stock drops below 5 units.
+
+- 🧠 **Loyalty Update Trigger** *(Apex Trigger)*  
+  Dynamically updates customer loyalty status based on purchase history.
+
+- 🌙 **Midnight Batch Job** *(Apex Batch Class)*  
+  Handles bulk processing of orders, inventory updates, and financials during off-peak hours.
+
+---
+
+## 💌 Email Templates
+
+### 🔹 Order Confirmation Email  
+- Uses dynamic merge fields: `Customer Name`, `Order Total`, and `Item List`.
+
+### 🔸 Stock Alert Email  
+- Automatically sent to the warehouse team for proactive inventory control.
+
 ---
 
 ## 📈 Business Impact
