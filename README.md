@@ -34,13 +34,14 @@ HandsMen Threads' Salesforce-powered solution transforms data management and cus
 
 ## 📦 Objects Overview
 
-| Object Name        | Type    | Key Fields                             |
-|--------------------|---------|-----------------------------------------|
-| `Customer__c`      | Custom  | Name, Email, Loyalty Status             |
-| `Order__c`         | Custom  | Order Date, Customer, Total Amount      |
-| `Product__c`       | Custom  | Stock Level, Price, SKU                 |
-| `Warehouse__c`     | Custom  | Name, Location                          |
-| `OrderLineItem__c` | Junction| Order ↔ Product, Quantity               |
+| Object Label          | Type           | Description                                         |
+|-----------------------|----------------|-----------------------------------------------------|
+| HandsMen Customer     | Custom Object  | Stores customer details and loyalty status          |
+| HandsMen Orders       | Custom Object  | Captures order records with totals and customer ref |
+| HandsMen Products     | Custom Object  | Holds product catalog, pricing, and stock levels    |
+| Inventorys            | Custom Object  | Tracks available stock and warehouse assignments    |
+| Marketing Campaigns   | Custom Object  | Manages promotions and targeted marketing efforts   |
+
 
 ---
 
@@ -52,7 +53,7 @@ HandsMen Threads' Salesforce-powered solution transforms data management and cus
 - ⚠️ **Stock Alert Flow** *(Scheduled Flow)*  
   Triggers automated alert when product stock drops below 5 units.
 
-- 🧠 **Loyalty Update Trigger** *(Apex Trigger)*  
+- 🧠 **Loyalty Update Flow** *(Apex Trigger)*  
   Dynamically updates customer loyalty status based on purchase history.
 
 - 🌙 **Midnight Batch Job** *(Apex Batch Class)*  
